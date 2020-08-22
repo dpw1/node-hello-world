@@ -1,3 +1,12 @@
-module.exports = async (req, res) => {
-  res.status(200).json({ llama: "king" });
-};
+const express = require("express");
+const app = express();
+
+app.get("/", (req, res) => {
+  res.json({ endpoint: "/root" });
+});
+
+app.get("/books", (req, res) => {
+  res.json({ endpoint: "/books" });
+});
+
+app.listen(3000, () => console.log("LISTEN 3000"));
